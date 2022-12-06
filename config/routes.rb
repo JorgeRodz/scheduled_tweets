@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # ----- Deferent ways fo defining root path -----
+  # get '/', to: 'main#index'
+  # root 'main#index'
+  root to: 'main#index'
+
+  # ----- Deferent ways fo defining root path -----
+  # get '/about', to: 'about#index'
+  # 👇 text url on browser, controller, path/prefix name
+  get '/about-us', to: 'about#index', as: :about
 end
