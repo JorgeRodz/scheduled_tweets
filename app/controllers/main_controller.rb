@@ -2,5 +2,8 @@
 
 # Main class controller
 class MainController < ApplicationController
-  def index; end
+  def index
+    flash.now[:notice] = 'Logged in successfully'
+    flash.now[:alert] = 'Invalid email or password'
+  end
 end
