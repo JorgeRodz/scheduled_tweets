@@ -7,15 +7,62 @@
     <%= csp_meta_tag %>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .input-group-append > span.input-group-text {
+        cursor: pointer;
+      }
+      .input-group-text {
+        height: 100%;
+      }
+      .field_with_errors:first-child {
+        width: 100%;
+      }
+      .field_with_errors:first-child > label::before {
+        content: "⛔ ";
+      }
+    </style>
   </head>
 
   <body>
-    <%= render partial: 'shared/navbar' %>
     <div class='container'>
+      <%= render partial: 'shared/navbar' %>
       <%= yield %>
     </div>
   </body>
+  <script>
+    function password_show_hide() {
+      let x = document.querySelector('.password_toggle');
+      let show_eye = document.getElementById("show_eye");
+      let hide_eye = document.getElementById("hide_eye");
+      hide_eye.classList.remove("d-none");
+      if (x.type === "password") {
+        x.type = "text";
+        show_eye.style.display = "none";
+        hide_eye.style.display = "block";
+      } else {
+        x.type = "password";
+        show_eye.style.display = "block";
+        hide_eye.style.display = "none";
+      }
+    }
+    function password_confirmation_show_hide() {
+      let x = document.querySelector('.password_confirmation_toggle');
+      let show_eye = document.getElementById("show_eye_confirmation");
+      let hide_eye = document.getElementById("hide_eye_confirmation");
+      hide_eye.classList.remove("d-none");
+      if (x.type === "password") {
+        x.type = "text";
+        show_eye.style.display = "none";
+        hide_eye.style.display = "block";
+      } else {
+        x.type = "password";
+        show_eye.style.display = "block";
+        hide_eye.style.display = "none";
+      }
+    }
+  </script>
 </html>

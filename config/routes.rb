@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   # root 'main#index'
   root to: 'main#index'
 
-  # ----- Deferent ways fo defining root path -----
+  # ----------------------------- Routes -----------------------------
+  # ----- Customize url and path/prefix name -----
   # get '/about', to: 'about#index'
   # 👇 text url on browser, controller, path/prefix name
-  get '/about-us', to: 'about#index', as: :about
+  get 'about-us', to: 'about#index', as: :about
+
+  get 'sign-up', to: 'registrations#new' # display the 'new' view in which we contain the form
+  post 'sign-up', to: 'registrations#create' # triggers when the form is submitted
 end
