@@ -1,0 +1,29 @@
+<% flash.each do |name, msg| %>
+  <% if name == 'success' %>
+    <div class="alert alert-success alert-dismissible fade show mt-4" role='alert'>
+      <%= msg %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <% if name == 'notice' %>
+    <div class="alert alert-primary alert-dismissible fade show mt-4" role='alert'>
+      <%= msg %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <% if name == 'alert' %>
+    <div class="alert alert-warning alert-dismissible fade show mt-4" role='alert'>
+      <%= msg %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <% if name == 'error' %>
+    <div class="alert alert-danger alert-dismissible fade show mt-4" role='alert'>
+      <%= msg %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+<% end %>

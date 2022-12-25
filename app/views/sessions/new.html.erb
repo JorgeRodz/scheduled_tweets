@@ -1,0 +1,31 @@
+<div style='margin: 0 20rem'>
+  <h1 class='mb-4'>Sign in</h1>
+
+  <%= form_with(url: sign_in_path) do |form| %>
+    <div class="input-group mb-4">
+      <%= form.label :email, class: 'd-block w-100' %>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+      </div>
+      <%= form.email_field :email, class: 'input form-control', placeholder: 'example@gmail.com' %>
+    </div>
+
+    <div class="input-group mb-4">
+      <%= form.label :password, class: 'd-block w-100'  %>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-lock"></i></span>
+      </div>
+      <%= form.password_field :password, class: 'input form-control password_toggle',placeholder: '$trongPassw0rd'  %>
+      <div class="input-group-append">
+        <span class="input-group-text" onclick="password_show_hide();">
+          <i class="fas fa-eye" id="show_eye"></i>
+          <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+        </span>
+      </div>
+    </div>
+
+    <%= link_to "Forgot your password?", password_reset_path, class: 'd-block mb-4' %>
+
+    <%= form.submit 'Sign In', class: 'btn btn-primary' %>
+  <% end %>
+</div>

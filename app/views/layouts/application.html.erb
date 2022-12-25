@@ -24,12 +24,16 @@
       .field_with_errors:first-child > label::before {
         content: "⛔ ";
       }
+      .field_with_errors {
+        flex-grow: 1;
+      }
     </style>
   </head>
 
   <body>
+    <%= render partial: 'shared/navbar' %>
     <div class='container'>
-      <%= render partial: 'shared/navbar' %>
+      <%= render partial: 'shared/flash' %>
       <%= yield %>
     </div>
   </body>

@@ -1,8 +1,6 @@
 <div style='margin: 0 20rem'>
-  <h1 class='mb-4'>Sign up</h1>
-  <!-- This form will point to the 'post sign-up route' when submit the form -->
-  <!-- keyword      model      path/prefix route                -->
-  <%= form_with model: @user, url: sign_up_path do |form| %>
+  <h1 class='mb-4'>Reset your password</h1>
+  <%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
     <% if form.object.errors.any? %>
       <div class="alert alert-danger">
         <% form.object.errors.full_messages.each do |message| %>
@@ -10,14 +8,6 @@
         <% end %>
       </div>
     <% end%>
-
-    <div class="input-group mb-4">
-      <%= form.label :email, class: 'd-block w-100' %>
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
-      </div>
-      <%= form.email_field :email, class: 'input form-control', placeholder: 'example@gmail.com' %>
-    </div>
 
     <div class="input-group mb-4">
       <%= form.label :password, class: 'd-block w-100'  %>
@@ -47,6 +37,6 @@
       </div>
     </div>
 
-    <%= form.submit 'Sign Up', class: 'btn btn-primary' %>
+    <%= form.submit 'Update password', class: 'btn btn-primary' %>
   <% end %>
 </div>

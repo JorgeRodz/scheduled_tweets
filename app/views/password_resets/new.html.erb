@@ -1,0 +1,16 @@
+<div style='margin: 0 20rem'>
+  <h1>Forgot your password</h1>
+
+  <!-- Here do not specify a model because is just a simple form who will trigger the url path -->
+  <%= form_with url: password_reset_path do |form| %>
+    <div class="input-group mb-4">
+      <%= form.label :email, class: 'd-block w-100' %>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+      </div>
+      <%= form.email_field :email, class: 'input form-control', placeholder: 'example@gmail.com' %>
+    </div>
+
+    <%= form.submit 'Reset Password', class: 'btn btn-primary' %>
+  <% end %>
+</div>
