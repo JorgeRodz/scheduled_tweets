@@ -1,3 +1,7 @@
 <div>
   <h1 style='text-align: center;'>Welcome to scheduled tweets</h1>
 </div>
+
+<!-- This button_to helper will create a form in which we can make a request -->
+<!--helper_method   btn text          ulr           form-method       bootstap class-->
+<%= button_to "Connect Twitter", "/auth/twitter", method: :post, class: "btn btn-primary" %>

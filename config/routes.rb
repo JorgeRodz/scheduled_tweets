@@ -41,4 +41,8 @@ Rails.application.routes.draw do
   get 'password/reset/edit', to: 'password_resets#edit'
   patch 'password/reset/edit', to: 'password_resets#update'
   # *----- Reset password -----
+
+  # *----- twitter omniauth authentications-----
+  get 'auth/twitter/callback', to: 'omniauth_callbacks#twitter'
+  # *----- twitter omniauth authentications-----
 end
